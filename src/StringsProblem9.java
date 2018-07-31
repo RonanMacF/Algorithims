@@ -1,3 +1,4 @@
+
 // Assuming you have a isSubstring Function
 // Write a function to determine if given two strings, one is a rotation of the other
 
@@ -8,7 +9,8 @@ public class StringsProblem9 {
 		int len = s1.length();
 		if(len == 0 || len != s2.length()) return false;
 		
-		String s1s1 = s1+s1;
-		return isSubStr(s1s1, s2);
+		// String s1s1 = s1+s1;
+		//return isSubStr(s1s1, s2);
+		return true;
 	}
 }

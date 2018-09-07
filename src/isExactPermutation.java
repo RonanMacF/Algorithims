@@ -1,14 +1,16 @@
-// Check if one String is a Permutation of another
-// In this case we will say it is case sensitive and whitespace is Significant
+// Source: CTCI Chapter 1 Question 2
+// Problem: Check if one string is an exact permutation of another
+// Assumptions: Case Sensitive and whitespace is significant
+// Complexity: T(N) S(1)
 
 // Naive solution could be to sort both Strings and compare them together to see if equal
-// Solution below is O(n^2)
-public class StringsProblem2 {
+public class isExactPermutation {
 
 	boolean isPermutation(String s1, String s2) {
-		if (s1.length() != s2.length())
-			return false;
 		int len = s1.length();
+		if (len != s2.length())
+			return false;
+		
 		int charSum = 0;
 		for (int i = 0; i < len; i++) {
 			charSum += s1.charAt(i);

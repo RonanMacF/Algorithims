@@ -1,16 +1,20 @@
-// Function gives you a char [] and wants ' ' replaced with '%20'
-// given "true length" and buffer at the end of the string
+// Source: CTCI Chapter 1 Problem 3
+// Problem: Function gives you a char [] and wants ' ' replaced with '%20'
+// Assumption: 
+// Complexity: T(N) S(N)
+// 
 
-public class StringsProblem3 {
+public class URLify {
 
 	void URLify(char[] sentence, int trueLength) {
 		int spaces = 0;
-		for (int i = 0; i < trueLength; i++) {
+		// find num spaces
+		for (int i = 0; i < trueLength; i++) 
 			if(sentence[i] == ' ') spaces++;
-		}
+		
 		
 		int index = trueLength +  2 * spaces;
-		if(trueLength == index) sentence[index] = '\0';
+		if(trueLength == index) return;
 		
 		for(int i = trueLength -1; i > 0; i--) {
 			if(sentence[i] == ' ') {
@@ -19,10 +23,11 @@ public class StringsProblem3 {
 				sentence[index-3] = '%';
 				index -= 3;
 			}else {
-				index--;
 				sentence[index] = sentence[i];
+				index--;
 			}
 		}
 	}
 
 }
+

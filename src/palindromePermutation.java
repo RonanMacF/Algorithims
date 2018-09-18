@@ -22,7 +22,3 @@ public class palindromePermutation {
 
 }
 
-//Source: CTCI Chaper 1 Question 4
-//Problem: 
-//Assumption: 
-//Complexity: 

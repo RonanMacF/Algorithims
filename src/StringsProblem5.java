@@ -1,3 +1,7 @@
+//Source: CTCI Chaper 1 Question 5
+//Problem: Given 2 strings, check if they are 1 edit, removal, or insetion away
+//Assumption: case insensitive
+//Complexity: T(N) S(1)
 // given two string, check if they are < 1 edit away from being the same
 public class StringsProblem5 {
 
@@ -8,6 +12,7 @@ public class StringsProblem5 {
 		else if(s1.length() - 1 == s2.length()) return oneEditInsert(s2,s1);
 		else return false;
 	}
+	
 	public boolean oneEditReplace(String s1, String s2) {
 
 		boolean foundDiff = false;
@@ -47,8 +52,8 @@ public class StringsProblem5 {
 		
 		while(index1 < s1.length() && index2 < s2.length()) {
 			
-			//If there is a differnce of character and difference seen before return false as 2 changes, if same length increase index1&2, else just 2
-			// If characters are the same increase bothh indexes
+			//If there is a difference of character and difference seen before return false as 2 changes, if same length increase index1&2, else just 2
+			// If characters are the same increase both indexes
 			if(s1.charAt(index1) != s2.charAt(index2)) {
 				if(foundDiff) return false;
 				foundDiff = true;
@@ -66,3 +71,8 @@ public class StringsProblem5 {
 		
 	}
 }
+
+//Source: CTCI Chaper 1 Question 4
+//Problem: 
+//Assumption: 
+//Complexity: 

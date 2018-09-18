@@ -1,47 +1,50 @@
-// Given a MxN matrix, if any 0 is present set the entire row + column to 0
+// Source: CTCI Chapeter 1 Problem 8
+// Problem: If a 0 is present in a matrix set the entire row and column to 0
+// Assumption: n/a
+// Complexity: Time = O(n^2) Space = O(1)
 
-public class StringsProblems8 {
-// This uses O(N) space
+public class SetMatrixZeroes {
+	// This uses O(N) space
 	void setZeros(int[][] matrix) {
-		boolean[] row = new boolean[matrix.length];
-		boolean[] column = new boolean[matrix[0].length];
+		if (matrix == null) {
+			return;
+		}
 
-		// This marks any columns + rows with a 0 in it
-		for(int i = 0; i < matrix.length; i++) {
-			for(int j = 0; i < matrix[i].length; i++) {
-				if(matrix[i][j] == 0) {
-					row[i] = true;
-					column[j] = true;
+		int row = matrix.length;
+		int col = matrix[0].length;
+
+		boolean rowHasZero = false;
+		boolean colHasZero = false;
+
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				if (matrix[i][j] == 0) {
+					matrix[i][0] = 0;
+					matrix[0][j] = 0;
+					if (i == 0)
+						rowHasZero = true;
+					if (j == 0)
+						colHasZero = true;
 				}
 			}
 		}
-		
-		for(int i = 0; i < row.length; i++) {
-			if(row[i]) nullifyRow(matrix,i);
-		}
-		
-		for(int i = 0; i < column.length; i++) {
-			if(column[i]) nullifyCol(matrix,i);
+
+		// first row;
+		for (int i = 1; i < row; i++) {
+			for (int j = 1; j < col; j++) {
+				if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+					matrix[i][j] = 0;
+				}
+			}
 		}
 
-
-	}
-	
-	void nullifyRow(int[][] matrix, int row) {
-		for(int j = 0; j < matrix.length;j++) {
-			matrix[row][j] = 0;
+		if (rowHasZero) {
+			for (int i = 0; i < col; i++)
+				matrix[0][i] = 0;
 		}
-	}
-	
-	void nullifyCol(int[][] matrix, int col) {
-		for(int j = 0; j < matrix.length;j++) {
-			matrix[j][col] = 0;
+		if (colHasZero) {
+			for (int i = 0; i < row; i++)
+				matrix[i][0] = 0;
 		}
 	}
-
-// Solution 2
-// We can make space O(1) by if a 0 is contained in a matrix, set the corresponsing column on the first row and the corresponding row on the first column
-// DOing this we dont need a coolean array but instead just two variables, firstRowZero and firstColZero
-
 }
-

@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-// Source: EPI
-// Question 5.8
-// Given an Array, rearrange them so that A[0] <= A[1] >= A[2] <= A[3].......
+//Source: EPI Chapter 5 Question 8
+//Problem: Given an Array, rearrange them so that A[0] <= A[1] >= A[2] <= A[3].......
+//Assumption:
+//Complexity: T(N) S(1)
+//Additional: One solution could be to sort and interleave the bottom and top half or sort Array and swap pairs, both NlogN
 
-// One solution could be to sort and interweave the bottom and top half or sort Array and swap pairs, both NlogN
 
 // S(1) & T(N)
 public class ComputingAnAlteration {
@@ -33,3 +34,9 @@ public class ComputingAnAlteration {
 		}
 	}
 }
+
+
+// Additional example
+// 1,2,3,4,5,6
+// 1,2,3	4,5,6
+// 1,4,2,5,3,6

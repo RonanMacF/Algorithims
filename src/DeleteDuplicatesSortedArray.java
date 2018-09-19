@@ -1,24 +1,30 @@
-//Source: EPI Chapter 5 Question 3
-//Problem: Given a List of integers representing how far you can jump forward, determine the minimum amount of steps required to reach the end, if possible
+//Source: EPI Chapter 5 Question 5
+//Problem: Remove Duplicates
 //Assumption:
 //Complexity: T(N) S(1)
 //Additional: 
-// T(N)
-// S(1)
-public class DeleteDuplicatesSortedArray {
-	
-	 public int removeDuplicates(int[] nums) {
-	        int pos = 1;
-	        for(int i = 1; i < nums.length; i++){
-	            if(nums[i] != nums[pos-1]){
-	                nums[pos++] = nums[i];
-	            }
-	        }
-	    return pos;
-	    }
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+public class DeleteDuplicatesSortedArray {
+
+	public static int removeDuplicates(int[] nums) {
+		if (nums.length == 0) 
+			return 0;
+		
+		int pos = 1;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] != nums[pos - 1]) {
+				nums[pos++] = nums[i];
+			}
+		}
+		return pos;
+	}
+
+	public static void main(String[] args) {
+		int[] input = new int[] {1,2,3,3,4,4,4,5,5,5};
+		int num = removeDuplicates(input);
+		for(int i = 0; i < num; i++) {
+			System.out.print(input[i] + ", ");
+		}
 	}
 
 }

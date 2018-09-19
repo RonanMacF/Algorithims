@@ -9,19 +9,6 @@ import java.util.List;
 
 public class IncrementArbitrartPrecisionIntegerLL {
 
-	public static void main(String[] args) {
-		List<Integer> A = new ArrayList<Integer>();
-		A.add(9);
-		A.add(9);
-		A.add(9);
-		A.add(9);
-
-		A = plusOne(A);
-		for (int i = 0; i < A.size(); i++) {
-			System.out.print(A.get(i) + ", ");
-		}
-	}
-
 	public static List<Integer> plusOne(List<Integer> A) {
 		int n = A.size() - 1;
 		A.set(n, A.get(n) + 1);
@@ -41,4 +28,16 @@ public class IncrementArbitrartPrecisionIntegerLL {
 		return A;
 	}
 
+	public static void main(String[] args) {
+		List<Integer> A = new ArrayList<Integer>();
+		A.add(9);
+		A.add(9);
+		A.add(9);
+		A.add(9);
+
+		A = plusOne(A);
+		for (int i = 0; i < A.size(); i++) {
+			System.out.print(A.get(i) + ", ");
+		}
+	}
 }

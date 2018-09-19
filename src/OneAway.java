@@ -2,7 +2,6 @@
 //Problem: Given 2 strings, check if they are 1 edit, removal, or insetion away
 //Assumption: case insensitive
 //Complexity: T(N) S(1)
-// given two string, check if they are < 1 edit away from being the same
 public class OneAway {
 
 	public boolean mergeAll(String first, String second) {

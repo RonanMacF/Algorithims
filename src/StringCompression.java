@@ -1,7 +1,12 @@
-// Compressess strings e.g aabbbcccc = a2b3c4, must check compressed String < original
+// Source: CTCI Chaper 1 Question 6
+// Problem: Compressess strings e.g aabbbcccc = a2b3c4, must check compressed String < original
+// Assumption: only uppercase and lowercase letters
+// Complexity: T(N) S(N)
+
+// Additional we should ideally find the length beforehand to check and see if its worth it, we then set the StringBuilder to that size
 // Use Stringbuilder and add Strings has O(l * n2)
 
-public class StringsProblem6 {
+public class StringCompression {
 	
 	public static String compress(String str) {
 		StringBuilder compressedStr = new StringBuilder();
@@ -20,3 +25,5 @@ public class StringsProblem6 {
 	}
 	
 }
+
+

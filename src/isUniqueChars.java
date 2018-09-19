@@ -6,7 +6,7 @@
 public class isUniqueChars {
 
 	boolean isUnique(String str) {
-		int checker = 0;
+		int checker = 0; //26 letters = use bitvector
 		int val;
 		
 		for(int i = 0; i < str.length(); i++) {

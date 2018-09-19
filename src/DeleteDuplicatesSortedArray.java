@@ -1,3 +1,8 @@
+//Source: EPI Chapter 5 Question 3
+//Problem: Given a List of integers representing how far you can jump forward, determine the minimum amount of steps required to reach the end, if possible
+//Assumption:
+//Complexity: T(N) S(1)
+//Additional: 
 // T(N)
 // S(1)
 public class DeleteDuplicatesSortedArray {

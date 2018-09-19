@@ -16,7 +16,6 @@ public class palindromePermutation {
 			if((bitVector & mask) == 0) bitVector |= mask;		// If the bit is not set, add it in
 			else bitVector &= ~mask;							// else remove that bit while keeping everything else
 		}
-
 		return (bitVector & (bitVector-1)) == 0;		// Check only 1 bit is left
 	}
 

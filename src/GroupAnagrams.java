@@ -8,19 +8,23 @@ import java.util.Map;
 // Source: LeetCode Medium Diffuculty
 // Problem: Given a list of Strings, group anagrams together
 // Assumption: Everything is lowercase
-// Complexity: T(N) S(N)
+// Complexity: T(N) S(NK) N = amount of Strings, K = Longest string 
 // Additional: 	Another possible solution is the Sort then direct compare
 //				Another weird idea, but with possible collisions, is the generate first 26 primes and multiply corresponding character against it.
 
 public class GroupAnagrams {
+	
+	public static void main(String[] args) {
+		String[] input = new String[]{"eat","tea","tan","ate","nat","bat"};
+		groupAnagrams(input);
+	}
 
-	public List<List<String>> groupAnagrams(String[] strs) {
-        
+	public static List<List<String>> groupAnagrams(String[] strs) {
         Map<Integer, List<String>> map = new HashMap<>();
         for(String w : strs){
             int key = hash(w);          
             map.computeIfAbsent(key, k -> new LinkedList<>()).add(w);
-        
+            System.out.println(Arrays.toString(map.entrySet().toArray()));
         }
         return new ArrayList<>(map.values());
     }

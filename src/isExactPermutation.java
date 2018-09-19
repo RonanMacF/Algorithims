@@ -11,11 +11,16 @@ public class isExactPermutation {
 		if (len != s2.length())
 			return false;
 		
-		int charSum = 0;
+		int[] charCount = new int[128]; // 128 for ASCII
+		for (int i = 0; i < len; i++) 
+			charCount[s1.charAt(i)]++;
+		
+		
 		for (int i = 0; i < len; i++) {
-			charSum += s1.charAt(i);
-			charSum -= s2.charAt(i);
+			char c = s2.charAt(i);
+			charCount[c]--;
+			if(charCount[c] < 0) return false;
 		}
-		return (charSum == 0);
+		return true;
 	}
 }

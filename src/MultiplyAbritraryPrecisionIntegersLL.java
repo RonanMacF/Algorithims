@@ -3,10 +3,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+//Source: EPI Chapter 5 Question 3
+//Problem: Multiply 2 numbers together which are stores as Linked Lists
+//Assumption:
+//Complexity: T(MN) S(M+N)
+//Additional: Brute force = convert to number, increment then convert back
 
-// Multiply 2 numbers together which are stores as Linked Lists
 
-// T(MN) S(M+N)
 public class MultiplyAbritraryPrecisionIntegersLL {
 
 	public static List<Integer> multiply (List<Integer> num1, List<Integer> num2){
@@ -34,6 +37,7 @@ public class MultiplyAbritraryPrecisionIntegersLL {
 		while(firstNonZero < output.size() && output.get(firstNonZero) == 0) {
 			firstNonZero++;
 		}
+		
 		// If is 0 then return
 		output = output.subList(firstNonZero, output.size());
 		if(output.isEmpty()) {

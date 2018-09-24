@@ -31,8 +31,7 @@ public class LongestPalindromicSubstring {
             // center point as i
             low = i - 1;
             high = i + 1;
-            while (low >= 0 && high < len
-                    && str.charAt(low) == str.charAt(high)) {
+            while (low >= 0 && high < len && str.charAt(low) == str.charAt(high)) {
                 if (high - low + 1 > maxLength) {
                     maxLength = high - low + 1;
                 }
@@ -43,9 +42,52 @@ public class LongestPalindromicSubstring {
 		return maxLength;
 	}
 	
+	public static String longestPalindrome(String s) {
+        if(s.isEmpty() || s.length() < 2) return null;
+        int left = 0, right = 0, maxLen = 1;
+        int length = s.length();
+        int firstIndex = 0;
+       for(int i = 1; i < length; i++){
+            
+            //assuming even palindrome
+           left = i -1;
+           right = i;
+            while(left >= 0 && right < length && s.charAt(left) == s.charAt(right)){
+            	if( right - left  + 1 > maxLen) {
+            		maxLen =  right - left  + 1;
+                    firstIndex = left;
+            	}
+
+                left--;
+           right++;
+            }
+           
+            System.out.println("maxLen = " + maxLen + "  firstIndex = " + firstIndex);
+           
+           //assuming odd palindrome
+           left = i -1;
+           right = i + 1;
+            while(left >= 0 && right < length && s.charAt(left) == s.charAt(right)){
+            	if( right - left  + 1 > maxLen) {
+            		maxLen = right - left + 1;
+                    firstIndex = left;
+            	}
+
+                  left--;
+           right++;
+            }
+            System.out.println("maxLen = " + maxLen + "  firstIndex = " + firstIndex);
+
+         
+           
+        }
+   
+        return s.substring(firstIndex,firstIndex + maxLen);
+        
+    }
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println(longestPalindrome("aaa"));
 
 	}
 

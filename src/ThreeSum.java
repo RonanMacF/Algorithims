@@ -34,5 +34,39 @@ public class ThreeSum {
         }
         return res;
     }
+	
+	public static int missingNumber(int a[]) {
+	    int lo = 0;
+	    int hi = a.length - 1; 
+
+	    // All elements present? If so, return next largest number.
+	    if((hi-lo) == (a[hi]-a[lo])) { return a[hi]+1; }
+
+	    // While 2 or more elements to left to consider...
+	    while((hi-lo) >= 2) { 
+	        int mid = lo + ( hi- lo) / 2;
+	        if((mid-lo) != (a[mid]-a[lo])) {  // Explore left-hand side
+	            hi = mid;
+	        } else {  // Explore right hand side
+	            lo = mid + 1;
+	        }
+	    }
+
+	    // Return missing value from the two candidates remaining...
+	    return (lo == (a[lo]-a[0])) ? hi + a[0] : lo + a[0];
+	}
+	
+	public static void main(String [] args) {
+		int a = 2;
+		int[] b = new int[]{0,1,2,3,5,6};
+		
+		System.out.println(missingNumber(b));
+		
+		
+		a ^= 3;
+		System.out.println(a);
+		a^= 3;
+		System.out.println(a);
+	}
 
 }

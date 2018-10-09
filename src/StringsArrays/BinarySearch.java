@@ -1,3 +1,5 @@
+package StringsArrays;
+
 // Binary Search questions generally come under 3 main templates, I will explain each of them here.
 
 public class BinarySearch {

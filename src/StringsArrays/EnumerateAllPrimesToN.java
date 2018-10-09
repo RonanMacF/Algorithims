@@ -1,3 +1,5 @@
+package StringsArrays;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,7 +20,7 @@ public class EnumerateAllPrimesToN {
 		isPrime.set(0, false);
 		isPrime.set(1, false);
 		
-		for(int i = 2; i <= n; i++) {
+		for(int i = 2; i <= Math.sqrt(n); i++) {
 			if(isPrime.get(i)) 
 				output.add(i);
 			for(int j = i; j <= n; j += i) 
@@ -26,6 +28,10 @@ public class EnumerateAllPrimesToN {
 		}
 		
 		return output;
+	}
+	
+	public static void main(String[] args){
+		System.out.println(genPrimes(30));
 	}
 }
 

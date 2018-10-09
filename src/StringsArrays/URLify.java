@@ -1,3 +1,5 @@
+package StringsArrays;
+
 // Source: CTCI Chapter 1 Problem 3
 // Problem: Function gives you a char [] and wants ' ' replaced with '%20'
 // Assumption: 
